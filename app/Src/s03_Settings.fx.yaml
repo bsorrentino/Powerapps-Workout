@@ -94,8 +94,7 @@ s03_Settings As screen:
                             LoadData( PlaybookA, "PlaybookA", true );, Notify("Error Loading Playbook A", NotificationType.Error); false, 
                             Notify( "Playbook A saved on device", NotificationType.Success, 1000)),
                             // Not Mobile
-                            ClearCollect( PlaybookA, Table(untypedValue) )
-                            )
+                        ClearCollect( PlaybookA, Table(untypedValue) ))
                 )
             PaddingLeft: =0
             PaddingRight: =0
