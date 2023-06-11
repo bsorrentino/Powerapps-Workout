@@ -94,7 +94,10 @@ s03_Settings As screen:
                             LoadData( PlaybookA, "PlaybookA", true );, Notify("Error Loading Playbook A", NotificationType.Error); false, 
                             Notify( "Playbook A saved on device", NotificationType.Success, 1000)),
                             // Not Mobile
-                        ClearCollect( PlaybookA, Table(untypedValue) ))
+                        ClearCollect( PlaybookA, ForAll( Table(untypedValue), { 
+                            'TASK': Text(Value.'TASK'), 
+                            'SERIES / TIME':  Text(Value.'SERIES / TIME'), 
+                            'KG X SIDE': Text(Value.'SERIES / TIME') } ))
                 )
             PaddingLeft: =0
             PaddingRight: =0
