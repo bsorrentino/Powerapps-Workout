@@ -92,7 +92,10 @@ s03_Settings As screen:
                         IfError( 
                             SaveData( Table(untypedValue), "PlaybookA" ), Notify("Error Saving Playbook A", NotificationType.Error); false, 
                             LoadData( PlaybookA, "PlaybookA", true );, Notify("Error Loading Playbook A", NotificationType.Error); false, 
-                            Notify( "Playbook A saved on device", NotificationType.Success, 1000)))
+                            Notify( "Playbook A saved on device", NotificationType.Success, 1000)),
+                            // Not Mobile
+                            ClearCollect( PlaybookA, Table(untypedValue) )
+                            )
                 )
             PaddingLeft: =0
             PaddingRight: =0
