@@ -94,7 +94,7 @@ s03_Settings As screen:
                             'KG X SIDE': Text(Value.'KG X SIDE') } ));
                     If( varIsMobile , 
                         IfError( 
-                            SaveData( Table(untypedValue), "PlaybookA" ), Notify("Error Saving Playbook A", NotificationType.Error); false, 
+                            SaveData( PlaybookA, "PlaybookA" ), Notify("Error Saving Playbook A", NotificationType.Error); false, 
                             // LoadData( PlaybookA, "PlaybookA", true );, Notify("Error Loading Playbook A", NotificationType.Error); false, 
                             Notify( "Playbook A saved on device", NotificationType.Success, 1000))
                         )
