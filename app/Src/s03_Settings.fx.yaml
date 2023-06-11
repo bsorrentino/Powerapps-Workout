@@ -116,6 +116,10 @@ s03_Settings As screen:
             LayoutMinWidth: =280
             OnSelect: |
                 =With({ untypedValue: ParseJSON( s03_txt_ImportData.Text ) },
+                    ClearCollect( PlaybookB, ForAll( Table(untypedValue), { 
+                            'TASK': Text(Value.'TASK'), 
+                            'SERIES / TIME':  Text(Value.'SERIES / TIME'), 
+                            'KG X SIDE': Text(Value.'KG X SIDE') }
                     If( varIsMobile , 
                         IfError( 
                             SaveData( Table(untypedValue), "PlaybookB" ), Notify("Error Saving Playbook B", NotificationType.Error); false, 
