@@ -3,7 +3,7 @@ s03_Settings As screen:
     Container7 As groupContainer.verticalAutoLayoutContainer:
         Height: =Parent.Height
         LayoutDirection: =LayoutDirection.Vertical
-        LayoutGap: =50
+        LayoutGap: =20
         LayoutMode: =LayoutMode.Auto
         Width: =Parent.Width
         ZIndex: =3
@@ -150,7 +150,7 @@ s03_Settings As screen:
             Width: =Parent.Width
             ZIndex: =9
 
-    Icon3 As icon.BackArrow:
+    s03_Ico_Back As icon.BackArrow:
         Height: =58
         Icon: =Icon.BackArrow
         OnSelect: =Back()
@@ -158,4 +158,12 @@ s03_Settings As screen:
         X: =10
         Y: =14
         ZIndex: =4
+
+    s03_lbl_AppVersion As label:
+        Align: =Align.Center
+        Height: =s03_TopBar.Height
+        Size: =21
+        Text: ="Text"
+        X: =s03_TopBar.Width - Self.Width
+        ZIndex: =5
 

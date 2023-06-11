@@ -858,6 +858,18 @@
               "message": {
                 "text": "Error occurred running rule app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 4
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -1888,19 +1900,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "s03_Settings.Icon3.AccessibleLabel"
+                  "fullyQualifiedName": "s03_Settings.s03_Ico_Back.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "s03_Settings.Icon3.AccessibleLabel",
+                  "fullyQualifiedName": "s03_Settings.s03_Ico_Back.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "s03_Settings",
-                "type": "s03_Settings.Icon3"
+                "type": "s03_Settings.s03_Ico_Back"
               }
             }
           ],
@@ -1918,19 +1930,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "s03_Settings.Icon3.TabIndex"
+                  "fullyQualifiedName": "s03_Settings.s03_Ico_Back.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "s03_Settings.Icon3.TabIndex",
+                  "fullyQualifiedName": "s03_Settings.s03_Ico_Back.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "s03_Settings",
-                "type": "s03_Settings.Icon3"
+                "type": "s03_Settings.s03_Ico_Back"
               }
             }
           ],

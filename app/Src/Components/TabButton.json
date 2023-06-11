@@ -135,7 +135,7 @@
         "Name": "TabButton_Button",
         "Parent": "TabButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 64,
+        "PublishOrderIndex": 65,
         "Rules": [
           {
             "Category": "Data",
@@ -439,7 +439,7 @@
         "Name": "TabButton_Rectangle",
         "Parent": "TabButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 65,
+        "PublishOrderIndex": 66,
         "Rules": [
           {
             "Category": "Design",

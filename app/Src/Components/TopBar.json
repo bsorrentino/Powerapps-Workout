@@ -152,7 +152,7 @@
             "Name": "TopBar_Icon",
             "Parent": "TopBar_Container",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 61,
+            "PublishOrderIndex": 62,
             "Rules": [
               {
                 "Category": "Data",
@@ -500,7 +500,7 @@
             "Name": "TopBar_Label",
             "Parent": "TopBar_Container",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 62,
+            "PublishOrderIndex": 63,
             "Rules": [
               {
                 "Category": "Data",
@@ -863,7 +863,7 @@
             "Name": "TopBar_Filler",
             "Parent": "TopBar_Container",
             "PersistMetaDataIDKey": false,
-            "PublishOrderIndex": 63,
+            "PublishOrderIndex": 64,
             "Rules": [
               {
                 "Category": "Design",
@@ -1047,7 +1047,7 @@
         "Name": "TopBar_Container",
         "Parent": "TopBar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 60,
+        "PublishOrderIndex": 61,
         "Rules": [
           {
             "Category": "Design",
