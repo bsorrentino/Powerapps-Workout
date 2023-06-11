@@ -97,7 +97,7 @@ s03_Settings As screen:
                         ClearCollect( PlaybookA, ForAll( Table(untypedValue), { 
                             'TASK': Text(Value.'TASK'), 
                             'SERIES / TIME':  Text(Value.'SERIES / TIME'), 
-                            'KG X SIDE': Text(Value.'SERIES / TIME') } )))
+                            'KG X SIDE': Text(Value.'KG X SIDE') } )))
                 )
             PaddingLeft: =0
             PaddingRight: =0
@@ -114,13 +114,18 @@ s03_Settings As screen:
             Height: =100
             LayoutMinHeight: =70
             LayoutMinWidth: =280
-            OnSelect: |-
+            OnSelect: |
                 =With({ untypedValue: ParseJSON( s03_txt_ImportData.Text ) },
                     If( varIsMobile , 
                         IfError( 
                             SaveData( Table(untypedValue), "PlaybookB" ), Notify("Error Saving Playbook B", NotificationType.Error); false, 
                             LoadData( PlaybookB, "PlaybookB", true );, Notify("Error Loading Playbook B", NotificationType.Error); false, 
-                            Notify( "Playbook B saved on device", NotificationType.Success, 1000)))
+                            Notify( "Playbook B saved on device", NotificationType.Success, 1000)),
+                                        // Not Mobile
+                        ClearCollect( PlaybookB, ForAll( Table(untypedValue), { 
+                            'TASK': Text(Value.'TASK'), 
+                            'SERIES / TIME':  Text(Value.'SERIES / TIME'), 
+                            'KG X SIDE': Text(Value.'KG X SIDE') } )))
                 )
             PaddingLeft: =0
             PaddingRight: =0
