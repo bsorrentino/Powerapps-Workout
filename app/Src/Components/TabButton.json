@@ -581,7 +581,7 @@
       "OnSelect_Text",
       "OnSelect"
     ],
-    "LastModifiedTimestamp": "638220996735737835",
+    "LastModifiedTimestamp": "638221064366359779",
     "Name": "TabButton",
     "Rules": [
       {
@@ -712,7 +712,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638220996735737835",
+  "LastModifiedTimestamp": "638221064366359779",
   "Name": "1d2113f378124de5b9e675a7c75050b0",
   "OverridableProperties": {},
   "Version": "637810319484398141"

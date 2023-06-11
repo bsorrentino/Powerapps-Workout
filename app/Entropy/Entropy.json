@@ -81,7 +81,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "06/11/2023 17:11:26",
+  "HeaderLastSavedDateTimeUTC": "06/11/2023 18:55:14",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
@@ -93,11 +93,11 @@
     "Officina": "0005.png"
   },
   "LocalResourceRootPaths": {
-    "bodybuilding-icon-15": "https://docserverpwaprodeus.blob.core.windows.net/389fa201-d29f-4b8c-ae64-8be66867413e-1/resource/Assets0Images00001.jpeg?sv=2018-03-28&sr=b&sig=WswH69ar9aS04XYUHiVJBHx2sF3HjJgwwIvtOKyCEw0%3D&spr=https&se=2023-06-12T17%3A16%3A13Z&sp=r",
-    "bodybuilding-icon-16": "https://docserverpwaprodeus.blob.core.windows.net/389fa201-d29f-4b8c-ae64-8be66867413e-1/resource/Assets0Images00002.png?sv=2018-03-28&sr=b&sig=nI2dOhiu9Ou8pP4c4IdeSkFvov38Drx0qqogumTS1Sk%3D&spr=https&se=2023-06-12T17%3A16%3A13Z&sp=r",
-    "bodybuilding-icon-18": "https://docserverpwaprodeus.blob.core.windows.net/389fa201-d29f-4b8c-ae64-8be66867413e-1/resource/Assets0Images00003.png?sv=2018-03-28&sr=b&sig=tK5MMRrxyWnc9yfRgu07OnJBYkljizzRy%2FyZSYVNWi4%3D&spr=https&se=2023-06-12T17%3A16%3A13Z&sp=r",
-    "kg": "https://docserverpwaprodeus.blob.core.windows.net/389fa201-d29f-4b8c-ae64-8be66867413e-1/resource/Assets0Images00004.png?sv=2018-03-28&sr=b&sig=vmvkoIdS5vA5XQPSptD%2F9w4zYZxyLXl4%2FHcy7GIWvhY%3D&spr=https&se=2023-06-12T17%3A16%3A13Z&sp=r",
-    "Officina": "https://docserverpwaprodeus.blob.core.windows.net/389fa201-d29f-4b8c-ae64-8be66867413e-1/resource/Assets0Images00005.png?sv=2018-03-28&sr=b&sig=I5XdPzYkALFyynFqUwd4Jh%2Fpt2B6xrTjoaUOOJtUmQE%3D&spr=https&se=2023-06-12T17%3A16%3A13Z&sp=r"
+    "bodybuilding-icon-15": "https://docserverpwaprodeus.blob.core.windows.net/07590edb-815a-4757-9958-989ad7cc0705-1/resource/Assets0Images00001.jpeg?sv=2018-03-28&sr=b&sig=WbRllrGqhUdbNQ%2BrNsYSkJZOt6yU7qWPybmVpnBlE3M%3D&spr=https&se=2023-06-12T19%3A08%3A56Z&sp=r",
+    "bodybuilding-icon-16": "https://docserverpwaprodeus.blob.core.windows.net/07590edb-815a-4757-9958-989ad7cc0705-1/resource/Assets0Images00002.png?sv=2018-03-28&sr=b&sig=xfFVmbkODh5abNDQ4bHljgtf8zoHkpqylgkHxQ73vj8%3D&spr=https&se=2023-06-12T19%3A08%3A56Z&sp=r",
+    "bodybuilding-icon-18": "https://docserverpwaprodeus.blob.core.windows.net/07590edb-815a-4757-9958-989ad7cc0705-1/resource/Assets0Images00003.png?sv=2018-03-28&sr=b&sig=KGZelQ5zO%2FVKjZmLKs6878P%2Bcx5KykwBPXh%2BZytGGUA%3D&spr=https&se=2023-06-12T19%3A08%3A56Z&sp=r",
+    "kg": "https://docserverpwaprodeus.blob.core.windows.net/07590edb-815a-4757-9958-989ad7cc0705-1/resource/Assets0Images00004.png?sv=2018-03-28&sr=b&sig=FTm5AquX8lmVNzBEWIR59sALOlc34wKoGqULFCtlztc%3D&spr=https&se=2023-06-12T19%3A08%3A56Z&sp=r",
+    "Officina": "https://docserverpwaprodeus.blob.core.windows.net/07590edb-815a-4757-9958-989ad7cc0705-1/resource/Assets0Images00005.png?sv=2018-03-28&sr=b&sig=7mZBqTZqJ5v%2FIQNBJ5L2bUAaS3mdoAxIrpPZ4D3k5W4%3D&spr=https&se=2023-06-12T19%3A08%3A56Z&sp=r"
   },
   "OldLogoFileName": "logo.jpg",
   "OrderComponentMetadata": {
@@ -307,7 +307,7 @@
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 0.3824896,
+    "AnalysisLoadTime": 0.3779637,
     "ControlCount": {
       "1d2113f378124de5b9e675a7c75050b0": 3,
       "21d2f314aa574c5bade49bd40d6ae606": 4,
@@ -323,7 +323,7 @@
       "tbag_CanvizLLCPCF.PCFCopyTextComponent": 1,
       "text": 2
     },
-    "DeserializationLoadTime": 2.3213595
+    "DeserializationLoadTime": 2.6678002
   },
   "WasLocalDatabaseReferencesEmpty": false
 }
