@@ -165,8 +165,8 @@ s03_Settings As screen:
         Height: =s03_TopBar.Height
         Italic: =true
         Size: =21
-        Text: =AppVersion
-        Width: =100
+        Text: |-
+            =$"ver: {AppVersion}"
         X: =s03_TopBar.Width - Self.Width
         ZIndex: =5
 
