@@ -1,0 +1,16 @@
+{
+  "components": [
+    {
+      "Capabilities": {
+        "PCFExternalServiceUsageAllowed": false
+      },
+      "ComponentName": "CustomControl",
+      "Identifier": "tbag_CanvizLLCPCF.PCFCopyTextComponent",
+      "IdentifierType": 0
+    }
+  ],
+  "dataSources": {},
+  "instanceUrl": "https://bsc-labs.crm.dynamics.com/",
+  "state": "Configured",
+  "webApiVersion": "v9.0"
+}

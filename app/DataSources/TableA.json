@@ -1,0 +1,18 @@
+[
+  {
+    "Data": "[{\"KG X SIDE\":\"\",\"SERIES / TIME\":\"5m\",\"TASK\":\"CARDIO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x15\",\"TASK\":\"CROCI PANCA 45\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x15\",\"TASK\":\"SCI PANCA 45 \"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x15\",\"TASK\":\"ALZATE LATERALI SUPINO PANCA 45\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x15\",\"TASK\":\"CURL PANCA 45\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x15\",\"TASK\":\"KICK BACK PANCA 45 \"},{\"KG X SIDE\":\"\",\"SERIES / TIME\":\"30s\",\"TASK\":\"PLANK LATERALE\"},{\"KG X SIDE\":\"\",\"SERIES / TIME\":\"5m\",\"TASK\":\"CARDIO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x20\",\"TASK\":\"CHEST PRESS\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x20\",\"TASK\":\"REMATORE BIL PRESA INV\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x20\",\"TASK\":\"SHOULDER PRESS\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x20\",\"TASK\":\"HAMMER CURL MANUBRIO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x20\",\"TASK\":\"ESTENSIONE IN ALTO MANUBRIO\"},{\"KG X SIDE\":\"\",\"SERIES / TIME\":\"60s\",\"TASK\":\"PLANK\"}]",
+    "IsSampleData": false,
+    "IsWritable": false,
+    "Name": "TableA",
+    "OrderedColumnNames": [
+      "TASK",
+      "SERIES / TIME",
+      "KG X SIDE"
+    ],
+    "OriginalName": "TableA",
+    "OriginalSchema": "*['KG X SIDE':s, 'SERIES / TIME':s, TASK:s]",
+    "Schema": "*['KG X SIDE':s, 'SERIES / TIME':s, TASK:s]",
+    "Token": "dummyToken",
+    "Type": "StaticDataSourceInfo"
+  }
+]

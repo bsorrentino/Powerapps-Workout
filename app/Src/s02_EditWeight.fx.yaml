@@ -1,0 +1,325 @@
+s02_EditWeight As screen:
+    OnVisible: |-
+        =With( { split: ForAll(Split( Coalesce(Selected.'KG X SIDE', "0"), " - "), {Result: ThisRecord.Value}) },
+        ClearCollect( Weights, ForAll( Sequence(CountRows(split)), 
+            {
+            Index: Value,     
+            Weight: Last(FirstN( split, Value )).Result 
+            })))
+
+    Container2 As groupContainer.verticalAutoLayoutContainer:
+        Fill: =Settings.GalleryFill
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =2
+
+        s02_TopBar As TopBar:
+            caption: ="Weights"
+            Height: =100
+            Icon: =kg
+            LayoutMinHeight: =640
+
+        s02_lbl_Task As label:
+            AlignInContainer: =AlignInContainer.Stretch
+            Font: =FontFace
+            Height: =100
+            OnSelect: =true
+            PaddingBottom: =0
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =0
+            Size: =FontSize * 1.1
+            Text: =Selected.TASK
+            VerticalAlign: =VerticalAlign.Top
+            Width: =100
+            Y: =44
+            ZIndex: =2
+
+        s02_Container6 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =60
+            LayoutMinHeight: =112
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =4
+
+            s02_lbl_Series_Time As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                Color: =RGBA(39, 113, 194, 1)
+                FillPortions: =1
+                Font: =FontFace
+                FontWeight: =FontWeight.Semibold
+                Height: =Self.Size * 1.8
+                LayoutMinHeight: =15
+                LayoutMinWidth: =100
+                OnSelect: =true
+                PaddingBottom: =0
+                PaddingLeft: =15
+                PaddingRight: =15
+                PaddingTop: =0
+                Size: =FontSizeL
+                Text: =Selected.'SERIES / TIME'
+                VerticalAlign: =VerticalAlign.Top
+                Width: |
+                    =150
+                X: =s01_lbl_Task_1.X
+                Y: =s01_lbl_Task_1.Y + s01_lbl_Task_1.Height + 4
+                ZIndex: =1
+
+            s02_Separator2 As icon.VerticalLine:
+                AlignInContainer: =AlignInContainer.Center
+                Color: =RGBA(0, 0, 0, 1)
+                DisplayMode: =DisplayMode.View
+                FocusedBorderThickness: =1
+                Height: =Parent.Height
+                Icon: =Icon.VerticalLine
+                Width: =5
+                ZIndex: =2
+
+            s02_lbl_KgXSide As label:
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                Color: =RGBA(221, 79, 14, 1)
+                FillPortions: =1
+                Font: =FontFace
+                FontWeight: =FontWeight.Semibold
+                Height: =50
+                LayoutMinHeight: =15
+                LayoutMinWidth: =450
+                OnSelect: =true
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =FontSizeL
+                Text: |
+                    =Concat( s02_gal_Weight.AllItems, Weight, " - " )
+                Width: =455
+                X: =104
+                Y: =123
+                ZIndex: =5
+
+        Separator1_4 As rectangle:
+            Height: =1
+            OnSelect: =true
+            Width: =Parent.Width
+            ZIndex: =5
+
+        s02_gal_Weight As gallery.galleryVertical:
+            Fill: =Settings.GalleryFill
+            Items: =Weights
+            Layout: =Layout.Vertical
+            LayoutMinHeight: =287
+            LayoutMinWidth: =320
+            TemplateSize: =150
+            ZIndex: =6
+
+            Container8 As groupContainer.horizontalAutoLayoutContainer:
+                Height: =Parent.TemplateHeight
+                LayoutGap: =10
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =15
+                PaddingRight: =15
+                Width: =Parent.TemplateWidth
+                ZIndex: =2
+
+                s02_btn_Min5 As button:
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderThickness: =0
+                    Font: =FontFace
+                    Height: =72
+                    LayoutMinHeight: =70
+                    LayoutMinWidth: =280
+                    OnSelect: |-
+                        =With( { recordByIndex: Last(FirstN(Weights, ThisItem.Index)) },
+                        Patch( Weights, recordByIndex, {Weight: ThisItem.Weight - 5} ))
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =Settings.FontSizeL
+                    Text: ="- 5"
+                    Width: =Self.Height
+                    ZIndex: =1
+
+                s02_btn_Min1 As button:
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderThickness: =0
+                    Font: =FontFace
+                    Height: =72
+                    LayoutMinHeight: =70
+                    LayoutMinWidth: =280
+                    OnSelect: |-
+                        =With( { recordByIndex: Last(FirstN(Weights, ThisItem.Index)) },
+                        Patch( Weights, recordByIndex, {Weight: ThisItem.Weight - 1} ))
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =Settings.FontSizeL
+                    Text: ="- 1"
+                    Width: =Self.Height
+                    ZIndex: =2
+
+                "'s02_btn_Min1/4' As button":
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderThickness: =0
+                    Font: =FontFace
+                    FontWeight: =FontWeight.Normal
+                    Height: =72
+                    LayoutMinHeight: =70
+                    LayoutMinWidth: =280
+                    OnSelect: |-
+                        =With( { recordByIndex: Last(FirstN(Weights, ThisItem.Index)) },
+                        Patch( Weights, recordByIndex, {Weight: ThisItem.Weight - .25} ))
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =Settings.FontSize
+                    Text: ="- .25"
+                    Width: =Self.Height
+                    ZIndex: =3
+
+                s02_txt_Weight As text:
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderColor: =RGBA(230, 230, 230, 1)
+                    BorderThickness: =1
+                    Default: =ThisItem.Weight
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FillPortions: =1
+                    Font: =FontFace
+                    FontWeight: =FontWeight.Bold
+                    Format: =TextFormat.Number
+                    Height: =70
+                    LayoutMinHeight: =70
+                    LayoutMinWidth: =100
+                    PaddingLeft: =5
+                    Size: =FontSizeL
+                    Width: =560
+                    ZIndex: =4
+
+                "'s02_btn_Add1/4' As button":
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderThickness: =0
+                    Font: =FontFace
+                    FontWeight: =FontWeight.Normal
+                    Height: =72
+                    LayoutMinHeight: =70
+                    LayoutMinWidth: =280
+                    OnSelect: |-
+                        =With( { recordByIndex: Last(FirstN(Weights, ThisItem.Index)) },
+                        Patch( Weights, recordByIndex, {Weight: ThisItem.Weight + .25} ))
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =Settings.FontSize
+                    Text: ="+.25"
+                    Width: =Self.Height
+                    ZIndex: =5
+
+                s02_btn_Add1 As button:
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderThickness: =0
+                    Font: =FontFace
+                    Height: =72
+                    LayoutMinHeight: =70
+                    LayoutMinWidth: =280
+                    OnSelect: |-
+                        =With( { recordByIndex: Last(FirstN(Weights, ThisItem.Index)) },
+                        Patch( Weights, recordByIndex, {Weight: ThisItem.Weight + 1} ))
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =Settings.FontSizeL
+                    Text: ="+ 1"
+                    Width: =Self.Height
+                    ZIndex: =6
+
+                s02_btn_Add5 As button:
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderThickness: =0
+                    Font: =FontFace
+                    Height: =72
+                    LayoutMinHeight: =70
+                    LayoutMinWidth: =280
+                    OnSelect: |-
+                        =With( { recordByIndex: Last(FirstN(Weights, ThisItem.Index)) },
+                        Patch( Weights, recordByIndex, {Weight: ThisItem.Weight + 5} ))
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Size: =Settings.FontSizeL
+                    Text: ="+ 5"
+                    Width: =Self.Height
+                    ZIndex: =7
+
+            Separator1_3 As rectangle:
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - 1
+                ZIndex: =3
+
+    s02_ToolBar As groupContainer.horizontalAutoLayoutContainer:
+        Height: =s02_TopBar.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =15
+        LayoutJustifyContent: =LayoutJustifyContent.End
+        LayoutMode: =LayoutMode.Auto
+        PaddingRight: =5
+        Width: =200
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+        s02_ico_Save As icon.Cancel:
+            Height: =48
+            Icon: =Icon.Check
+            OnSelect: |-
+                =With( { patch: { 'KG X SIDE': s02_lbl_KgXSide.Text } }, 
+                If( DataSource = "PlaybookA", 
+                    // PlaybookA
+                    Patch( PlaybookA, Selected, patch );
+                    If( varIsMobile , 
+                        IfError(SaveData( PlaybookA, "PlaybookA" ), Notify("Error Saving Playbook", NotificationType.Error), 
+                            Notify( "Playbook A saved on device", NotificationType.Success, 1000))), 
+                    // PlaybookB 
+                    Patch( PlaybookB, Selected, patch );
+                    If( varIsMobile , 
+                        IfError( SaveData( PlaybookB, "PlaybookB" ), Notify("Error Saving Playbook", NotificationType.Error), 
+                            Notify( "Playbook B saved on device", NotificationType.Success, 1000)))
+                );
+                Back())
+            Width: =48
+            ZIndex: =1
+
+        Icon1 As icon.VerticalLine:
+            Color: =RGBA(136, 160, 209, 1)
+            Icon: =Icon.VerticalLine
+            Width: =24
+            ZIndex: =2
+
+        s02_ico_Cancel As icon.Add:
+            Height: =48
+            Icon: =Icon.Cancel
+            OnSelect: =Back()
+            Width: =48
+            ZIndex: =3
+

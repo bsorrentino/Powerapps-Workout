@@ -1,0 +1,33 @@
+App As appinfo:
+    BackEnabled: =false
+    Formulas: |-
+        =FontSize = 26;
+        FontSizeL = FontSize * 1.20;
+        FontFace = Font.Arial;
+    OnStart: |-
+        =Set( Settings, {
+            FontSize: 23,
+            FontSizeL: 23 * 1.25,
+            GalleryFill: RGBA(241, 244, 249, 1)
+        });
+        Set( CurrentPlayBook, "Play Book A" );
+        Set( varIsMobile, Acceleration.X > 0 Or Location.Altitude > 0 );
+        If( varIsMobile ,
+            // IS MOBILE
+            // Define Schema
+            //Collect(PlaybookA, [{ TASK:"", 'SERIES / TIME':"", 'KG X SIDE': "" }]); Clear(PlaybookA);        
+            LoadData( PlaybookA, "PlaybookA", true );
+            // Define Schema
+            // Collect(PlaybookB, [{ TASK:"", 'SERIES / TIME':"", 'KG X SIDE': "" }]); Clear(PlaybookB);        
+            LoadData( PlaybookB, "PlaybookB", true  )
+        );
+        If( IsEmpty(PlaybookA), ClearCollect( PlaybookA, TableA ));
+        If( IsEmpty(PlaybookB), ClearCollect( PlaybookB, TableB ))
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

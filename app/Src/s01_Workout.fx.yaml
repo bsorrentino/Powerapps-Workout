@@ -1,0 +1,321 @@
+s01_Workout As screen:
+    OnVisible: |-
+        =// UpdateContext( { CurrentPlayBook: "Play Book A" } );
+        // Notify( "Is Mobile " & varIsMobile )
+
+    s01_Container1 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =2
+
+        s01_TopBar As TopBar:
+            caption: =CurrentPlayBook
+            Height: =100
+            Icon: ='bodybuilding-icon-18'
+            IconPadding: =6
+            LayoutMinHeight: =640
+
+        s01_TabBar As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =60
+            LayoutMinHeight: =112
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            Width: =Parent.Width
+            ZIndex: =2
+
+            TabButton_A As TabButton:
+                AlignInContainer: =AlignInContainer.Stretch
+                FillPortions: =1
+                LayoutMinHeight: =Parent.Height
+                LayoutMinWidth: =Parent.Height
+                OnSelect: =Set( CurrentPlayBook, Text )
+                SelectedTab: =CurrentPlayBook
+                Text: ="Play Book A"
+
+            TabButton_B As TabButton:
+                AlignInContainer: =AlignInContainer.Stretch
+                FillPortions: =1
+                LayoutMinHeight: =Parent.Height
+                LayoutMinWidth: =Parent.Height
+                OnSelect: =Set( CurrentPlayBook, Text )
+                SelectedTab: =CurrentPlayBook
+                Text: ="Play Book B"
+                ZIndex: =2
+
+        s01_TabContainer As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Height: =225
+            LayoutMinHeight: =112
+            LayoutMinWidth: =250
+            Width: =Parent.Width
+            ZIndex: =4
+
+            "s01_gal_PlaybookB As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                BorderThickness: =1
+                Fill: =Settings.GalleryFill
+                Height: =Parent.Height
+                Items: =PlaybookB
+                Layout: =Layout.Vertical
+                TemplatePadding: =0
+                TemplateSize: =180
+                Visible: =(CurrentPlayBook = "Play Book B")
+                Width: =Parent.Width
+                ZIndex: =1
+
+                Separator1_1 As rectangle:
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - 1
+                    ZIndex: =2
+
+                s01_Container2 As groupContainer.horizontalAutoLayoutContainer:
+                    Height: =Parent.TemplateHeight
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =10
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =10
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =7
+
+                    s01_Container7 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =Parent.Height
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =5
+                        LayoutMinHeight: =112
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =10
+                        PaddingTop: =10
+                        ZIndex: =2
+
+                        s01_lbl_Task_1 As label:
+                            FillPortions: =1
+                            Font: =FontFace
+                            Height: =60
+                            LayoutMinHeight: =80
+                            OnSelect: =true
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =FontSize
+                            Text: =ThisItem.TASK
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Parent.Width
+                            Y: =44
+                            ZIndex: =1
+
+                        s01_Container6 As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            Height: =225
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutMinHeight: =40
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =3
+
+                            s01_lbl_Series_Time_1 As label:
+                                Color: =RGBA(39, 113, 194, 1)
+                                FillPortions: =1
+                                Font: =FontFace
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Self.Size * 1.8
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =100
+                                OnSelect: =true
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =FontSize * 1.1
+                                Text: =ThisItem.'SERIES / TIME'
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =s01_lbl_Task_1.Width
+                                X: =s01_lbl_Task_1.X
+                                Y: =s01_lbl_Task_1.Y + s01_lbl_Task_1.Height + 4
+                                ZIndex: =1
+
+                            s01_lbl_KgXSide_1 As label:
+                                Color: =RGBA(221, 79, 14, 1)
+                                FillPortions: =1
+                                Font: =FontFace
+                                FontWeight: =FontWeight.Bold
+                                Height: =36
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =400
+                                OnSelect: =true
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =FontSize
+                                Text: |-
+                                    =With( { kg: ThisItem.'KG X SIDE' },
+                                    //If( kg = "0", "", kg)
+                                    kg
+                                    )
+                                Width: =455
+                                X: =104
+                                Y: =123
+                                ZIndex: =4
+
+                    s01_edit_PlaybookB As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        Height: =60
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |-
+                            =Navigate(s02_EditWeight,ScreenTransition.Cover, { Selected: ThisItem, DataSource: "PlaybookB" } )
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        TabIndex: =0
+                        Tooltip: ="View item details"
+                        Width: =60
+                        X: =40
+                        Y: =40
+                        ZIndex: =4
+
+            "s01_gal_PlaybookA As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                BorderThickness: =1
+                Fill: =Settings.GalleryFill
+                Height: =Parent.Height
+                Items: =PlaybookA
+                Layout: =Layout.Vertical
+                TemplatePadding: =0
+                TemplateSize: =180
+                Visible: =(CurrentPlayBook = "Play Book A")
+                Width: =Parent.Width
+                ZIndex: =2
+
+                s01_Separator1 As rectangle:
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - 1
+                    ZIndex: =2
+
+                s01_Container3 As groupContainer.horizontalAutoLayoutContainer:
+                    Height: =Parent.TemplateHeight
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =10
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =10
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =7
+
+                    s01_Container4 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =Parent.Height
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =5
+                        LayoutMinHeight: =112
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =10
+                        PaddingTop: =10
+                        ZIndex: =2
+
+                        s01_lbl_Task As label:
+                            AlignInContainer: =AlignInContainer.Start
+                            FillPortions: =1
+                            Font: =FontFace
+                            Height: =60
+                            OnSelect: =true
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Size: =FontSize
+                            Text: =ThisItem.TASK
+                            VerticalAlign: =VerticalAlign.Top
+                            Width: =Parent.Width
+                            Y: =44
+                            ZIndex: =1
+
+                        s01_Container5 As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            Height: =225
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutMinHeight: =40
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                            s01_lbl_Series_Time As label:
+                                Color: =RGBA(39, 113, 194, 1)
+                                FillPortions: =1
+                                Font: =FontFace
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Self.Size * 1.8
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =100
+                                OnSelect: =true
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =FontSize * 1.1
+                                Text: =ThisItem.'SERIES / TIME'
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =s01_lbl_Task_1.Width
+                                X: =s01_lbl_Task_1.X
+                                Y: =s01_lbl_Task_1.Y + s01_lbl_Task_1.Height + 4
+                                ZIndex: =1
+
+                            s01_lbl_KgXSide As label:
+                                Color: =RGBA(221, 79, 14, 1)
+                                FillPortions: =1
+                                Font: =FontFace
+                                FontWeight: =FontWeight.Bold
+                                Height: =36
+                                LayoutMinHeight: =15
+                                LayoutMinWidth: =400
+                                OnSelect: =true
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =FontSize
+                                Text: |-
+                                    =With( { kg: ThisItem.'KG X SIDE' },
+                                    // If( kg = "0", "", kg)
+                                    kg
+                                    )
+                                Width: =455
+                                X: =104
+                                Y: =123
+                                ZIndex: =3
+
+                    s01_edit_PlaybookA As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        Height: =60
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |-
+                            =Navigate(s02_EditWeight,ScreenTransition.Cover, { Selected: ThisItem, DataSource: "PlaybookA" } )
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        TabIndex: =0
+                        Tooltip: ="View item details"
+                        Width: =60
+                        ZIndex: =3
+
+    s01_ico_Settings As icon.Add:
+        Height: =58
+        Icon: =Icon.Settings
+        OnSelect: =Navigate(s03_Settings, Transition.Pop )
+        Width: =58
+        X: =560
+        Y: =20
+        ZIndex: =3
+

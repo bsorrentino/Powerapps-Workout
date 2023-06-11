@@ -1,0 +1,18 @@
+[
+  {
+    "Data": "[{\"KG X SIDE\":\"\",\"SERIES / TIME\":\"5m\",\"TASK\":\"CARDIO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x12\",\"TASK\":\"SALITA SU CUBO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x12\",\"TASK\":\"MOUNTAIN CLIMBER AL CUBO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x12\",\"TASK\":\"SQUAT BULGARO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x12\",\"TASK\":\"SQUAT CON SALTO LARGO STRETTO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x12\",\"TASK\":\"CALF LEG PRESS\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x30\",\"TASK\":\"ADDOME CON TORSIONE\"},{\"KG X SIDE\":\"\",\"SERIES / TIME\":\"5m\",\"TASK\":\"CARDIO\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x15\",\"TASK\":\"AFFONDI \\u002B SQUAT CON FLOW\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x12\",\"TASK\":\"STACCO \\u002B TIRATE AL MENTO MANUBRI COMB\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x10\",\"TASK\":\"PIEGAMENTI \\u002B REMATORE CON MANUBRI COMB\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x15\",\"TASK\":\"CURL MAN \\u002B EST IN ALTO MAN COM\"},{\"KG X SIDE\":\"0\",\"SERIES / TIME\":\"1x20\",\"TASK\":\"HALO\\u002BSPINTE IN ALTO\"},{\"KG X SIDE\":\"0 - 0 - 0\",\"SERIES / TIME\":\"3x20\",\"TASK\":\"ADDOME SUL TAPPETO\\u002BMEDICAL BALL LANCIATA AL MURO\"}]",
+    "IsSampleData": false,
+    "IsWritable": false,
+    "Name": "TableB",
+    "OrderedColumnNames": [
+      "TASK",
+      "SERIES / TIME",
+      "KG X SIDE"
+    ],
+    "OriginalName": "TableB",
+    "OriginalSchema": "*['KG X SIDE':s, 'SERIES / TIME':s, TASK:s]",
+    "Schema": "*['KG X SIDE':s, 'SERIES / TIME':s, TASK:s]",
+    "Token": "dummyToken",
+    "Type": "StaticDataSourceInfo"
+  }
+]

@@ -1,0 +1,49 @@
+TopBar As CanvasComponent:
+    caption: ="Text"
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =80
+    Icon: =SampleImage
+    IconPadding: =15
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    TopBar_Container As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(186, 202, 226, 1)
+        Height: =Parent.Height
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        TopBar_Icon As image:
+            AlignInContainer: =AlignInContainer.Center
+            Height: =Parent.Height
+            Image: =TopBar.Icon
+            LayoutMinHeight: =320
+            LayoutMinWidth: =320
+            PaddingBottom: =TopBar.IconPadding
+            PaddingLeft: =TopBar.IconPadding
+            PaddingRight: =TopBar.IconPadding
+            PaddingTop: =TopBar.IconPadding
+            Width: =Self.Height
+            ZIndex: =1
+
+        TopBar_Label As label:
+            Align: =Align.Center
+            FillPortions: =1
+            FontWeight: =FontWeight.Bold
+            Height: =Parent.Height
+            LayoutMinHeight: =70
+            LayoutMinWidth: =100
+            Size: =23
+            Text: =TopBar.caption
+            Width: =560
+            ZIndex: =3
+
+        TopBar_Filler As rectangle:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height
+            Width: =Self.Height
+            ZIndex: =4
+

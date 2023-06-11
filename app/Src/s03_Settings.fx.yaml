@@ -1,0 +1,149 @@
+s03_Settings As screen:
+
+    Container7 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =50
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =3
+
+        s03_TopBar As TopBar:
+            AlignInContainer: =AlignInContainer.Stretch
+            caption: ="Settings"
+            Icon: =
+            LayoutMinHeight: =640
+            LayoutMinWidth: =100
+
+        s03_btn_InitPlaybookA As button:
+            AlignInContainer: =AlignInContainer.Center
+            Height: =100
+            LayoutMinHeight: =70
+            LayoutMinWidth: =280
+            OnSelect: |
+                =UpdateContext( { playbookToReset: JSON(PlaybookA,JSONFormat.Compact) } );
+                ClearCollect( PlaybookA, TableA );
+                If( varIsMobile ,
+                    // IS MOBILE
+                    ClearData( "PlaybookA");
+                );
+                Notify( "Init PlaybookA Completed", NotificationType.Success, 1000)
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =24
+            Text: |-
+                ="Init Playbook A
+                "
+            Width: =Parent.Width * 0.7
+            ZIndex: =2
+
+        s03_btn_InitPlaybookB As button:
+            AlignInContainer: =AlignInContainer.Center
+            Height: =100
+            LayoutMinHeight: =70
+            LayoutMinWidth: =280
+            OnSelect: |-
+                =UpdateContext( { playbookToReset: JSON(PlaybookB, JSONFormat.Compact) } );
+                ClearCollect( PlaybookB, TableB );
+                If( varIsMobile ,
+                    // IS MOBILE
+                    ClearData( "PlaybookB")
+                );
+                Notify( "Init PlaybookB Completed", NotificationType.Success, 1000)
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =24
+            Text: |-
+                ="Init Playbook B
+                "
+            Width: =Parent.Width * 0.7
+            ZIndex: =4
+
+        Container9 As groupContainer.manualLayoutContainer:
+            FillPortions: =0
+            Height: =80
+            LayoutMinHeight: =112
+            LayoutMinWidth: =250
+            ZIndex: =6
+
+            s03_CopyToClipboard As PCFCopyTextComponent:
+                ButtonFontSize: =30
+                DisplayMode: =DisplayMode.Edit
+                Height: =80
+                InputFontFamily: ="Courier"
+                InputFontSize: =30
+                MultiLine: =true
+                ReadOnly: =true
+                Value: =playbookToReset
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+        s03_btn_ImportPlaybooA As button:
+            AlignInContainer: =AlignInContainer.Center
+            DisplayMode: =If( IsBlank(s03_txt_ImportData), DisplayMode.Disabled, DisplayMode.Edit)
+            Height: =100
+            LayoutMinHeight: =70
+            LayoutMinWidth: =280
+            OnSelect: |-
+                =With({ untypedValue: ParseJSON( s03_txt_ImportData.Text ) },
+                    If( varIsMobile , 
+                        IfError( 
+                            SaveData( Table(untypedValue), "PlaybookA" ), Notify("Error Saving Playbook A", NotificationType.Error); false, 
+                            LoadData( PlaybookA, "PlaybookA", true );, Notify("Error Loading Playbook A", NotificationType.Error); false, 
+                            Notify( "Playbook A saved on device", NotificationType.Success, 1000)))
+                )
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =24
+            Text: |-
+                ="import Playbook A
+                "
+            Width: =Parent.Width * 0.7
+            ZIndex: =7
+
+        s03_btn_ImportPlaybookB As button:
+            AlignInContainer: =AlignInContainer.Center
+            DisplayMode: =If( IsBlank(s03_txt_ImportData), DisplayMode.Disabled, DisplayMode.Edit)
+            Height: =100
+            LayoutMinHeight: =70
+            LayoutMinWidth: =280
+            OnSelect: |-
+                =With({ untypedValue: ParseJSON( s03_txt_ImportData.Text ) },
+                    If( varIsMobile , 
+                        IfError( 
+                            SaveData( Table(untypedValue), "PlaybookB" ), Notify("Error Saving Playbook B", NotificationType.Error); false, 
+                            LoadData( PlaybookB, "PlaybookB", true );, Notify("Error Loading Playbook B", NotificationType.Error); false, 
+                            Notify( "Playbook B saved on device", NotificationType.Success, 1000)))
+                )
+            PaddingLeft: =0
+            PaddingRight: =0
+            Size: =24
+            Text: |-
+                ="import Playbook B
+                "
+            Width: =Parent.Width * 0.7
+            ZIndex: =8
+
+        s03_txt_ImportData As text:
+            Default: =""
+            FillPortions: =1
+            Height: =70
+            HintText: ="Past Data to import"
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            Mode: =TextMode.MultiLine
+            Size: =21
+            Width: =Parent.Width
+            ZIndex: =9
+
+    Icon3 As icon.BackArrow:
+        Height: =58
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        Width: =58
+        X: =10
+        Y: =14
+        ZIndex: =4
+

@@ -1,0 +1,37 @@
+TabButton As CanvasComponent:
+    OnSelect(Text As String):
+        Text:
+            Default: ="Text"
+        ThisProperty:
+            Default: =true
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =45
+    SelectedTab: ="Text"
+    Text: ="Text"
+    Width: =150
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    TabButton_Button As button:
+        Color: =RGBA(39, 67, 125, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height
+        HoverColor: =ColorFade( Self.Color, 50% ) // RGBA(255, 255, 255, 1)
+        HoverFill: =Self.Fill //ColorFade(RGBA(56, 96, 178, 1), -20%)
+        OnSelect: =TabButton.OnSelect( TabButton.Text )
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        Size: =RoundDown(35*Self.Height/100,0)
+        Text: =TabButton.Text
+        Width: =TabButton.Width
+        ZIndex: =1
+
+    TabButton_Rectangle As rectangle:
+        DisplayMode: =DisplayMode.View
+        Height: =3
+        Visible: =If( TabButton.SelectedTab = TabButton.Text, true, false )
+        Width: =TabButton.Width
+        Y: =Parent.Height - Self.Height
+        ZIndex: =2
+
