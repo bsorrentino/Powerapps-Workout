@@ -88,16 +88,16 @@ s03_Settings As screen:
             LayoutMinWidth: =280
             OnSelect: |-
                 =With({ untypedValue: ParseJSON( s03_txt_ImportData.Text ) },
+                    ClearCollect( PlaybookA, ForAll( Table(untypedValue), { 
+                            'TASK': Text(Value.'TASK'), 
+                            'SERIES / TIME':  Text(Value.'SERIES / TIME'), 
+                            'KG X SIDE': Text(Value.'KG X SIDE') } ));
                     If( varIsMobile , 
                         IfError( 
                             SaveData( Table(untypedValue), "PlaybookA" ), Notify("Error Saving Playbook A", NotificationType.Error); false, 
-                            LoadData( PlaybookA, "PlaybookA", true );, Notify("Error Loading Playbook A", NotificationType.Error); false, 
-                            Notify( "Playbook A saved on device", NotificationType.Success, 1000)),
-                            // Not Mobile
-                        ClearCollect( PlaybookA, ForAll( Table(untypedValue), { 
-                            'TASK': Text(Value.'TASK'), 
-                            'SERIES / TIME':  Text(Value.'SERIES / TIME'), 
-                            'KG X SIDE': Text(Value.'KG X SIDE') } )))
+                            // LoadData( PlaybookA, "PlaybookA", true );, Notify("Error Loading Playbook A", NotificationType.Error); false, 
+                            Notify( "Playbook A saved on device", NotificationType.Success, 1000))
+                        )
                 )
             PaddingLeft: =0
             PaddingRight: =0
