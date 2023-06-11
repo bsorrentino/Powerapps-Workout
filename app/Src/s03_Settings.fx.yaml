@@ -97,7 +97,7 @@ s03_Settings As screen:
                         ClearCollect( PlaybookA, ForAll( Table(untypedValue), { 
                             'TASK': Text(Value.'TASK'), 
                             'SERIES / TIME':  Text(Value.'SERIES / TIME'), 
-                            'KG X SIDE': Text(Value.'SERIES / TIME') } ))
+                            'KG X SIDE': Text(Value.'SERIES / TIME') } )))
                 )
             PaddingLeft: =0
             PaddingRight: =0
