@@ -97,8 +97,8 @@ s03_Settings As screen:
                             SaveData( PlaybookA, "PlaybookA" ), Notify("Error Saving Playbook A", NotificationType.Error); false, 
                             // LoadData( PlaybookA, "PlaybookA", true );, Notify("Error Loading Playbook A", NotificationType.Error); false, 
                             Notify( "Playbook A saved on device", NotificationType.Success, 1000)),
-                            Notify( "Playbook A imported!", NotificationType.Success, 1000)          
-                        )
+                        Notify( "Playbook A imported!", NotificationType.Success, 1000)          
+                    )
                 )
             PaddingLeft: =0
             PaddingRight: =0
