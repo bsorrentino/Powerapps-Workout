@@ -549,7 +549,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon1",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -843,7 +843,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "s02_btn_Add1",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1241,7 +1241,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "s02_btn_Add1/4",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1620,7 +1620,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "s02_btn_Add5",
-      "ParentIndex": 5,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3827,7 +3827,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "s02_ico_Save",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4549,7 +4549,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "s02_lbl_Series_Time",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5240,7 +5240,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "s02_Separator2",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5935,7 +5935,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "s02_txt_Weight",
-      "ParentIndex": 6,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

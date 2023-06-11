@@ -10,7 +10,7 @@
     }
   ],
   "dataSources": {},
-  "instanceUrl": "https://bsc-labs.crm.dynamics.com/",
+  "instanceUrl": "https://orgd71cc8d0.crm.dynamics.com/",
   "state": "Configured",
   "webApiVersion": "v9.0"
 }
