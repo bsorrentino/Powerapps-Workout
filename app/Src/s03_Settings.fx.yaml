@@ -161,9 +161,12 @@ s03_Settings As screen:
 
     s03_lbl_AppVersion As label:
         Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
         Height: =s03_TopBar.Height
+        Italic: =true
         Size: =21
-        Text: ="Text"
+        Text: =AppVersion
+        Width: =100
         X: =s03_TopBar.Width - Self.Width
         ZIndex: =5
 

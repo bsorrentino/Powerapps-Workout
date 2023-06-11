@@ -1,7 +1,8 @@
 App As appinfo:
     BackEnabled: =false
-    Formulas: |-
-        =FontSize = 26;
+    Formulas: |
+        =AppVersion = "1.0";
+        FontSize = 26;
         FontSizeL = FontSize * 1.20;
         FontFace = Font.Arial;
     OnStart: |-
